@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<body class="CurrencyPage">
+
+    {% for Total in total %}
+        <h1 class="text-muted" style="margin: 10px; position: absolute; right: 600px;">{{ '%0.2f' | format(Total.amount * 4.15|float)}}</h1>
+    {% endfor %}
+
+    <h1 class="text-muted">Please enter the amount</h1>
+
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-group" style="position: absolute; top: 230px; right: 500px;">
+            <div class="form-group">
+                {{ form.amount(class="form-control form-control-lg") }}
+            </div>
+        </div>
+        <div class="form-group" style="position: absolute; top: 300px; right: 560px;">
+            {{ form.multiply(class="btn btn-outline-info") }}
+        </div>
+    </form>
+
+    <a href="{{ url_for('deletedataUSD') }}" style="position: absolute; top: 350px; right: 610px;">Home</a>
+</body>
+{% endblock %}

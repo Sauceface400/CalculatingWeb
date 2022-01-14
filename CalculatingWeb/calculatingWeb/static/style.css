@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: rgb(83, 81, 81);
+}
+
+.Title{
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 2px white solid;
+    color: rgb(233, 210, 210);
+    width: 164px;
+    height: 60px;
+}

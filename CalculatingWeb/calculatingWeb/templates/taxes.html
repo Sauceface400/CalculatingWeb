@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<body class="TaxesPage">
+    {% for tax in total %}
+        <h1 class="text-muted" style="margin: 10px; position: absolute; right: 600px;">{{ '%0.2f' | format((tax.amount * 0.06) + tax.amount|float)}}</h1>
+    {% endfor %}
+
+    <h1>Please enter the amount</h1>
+
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-group" style="position: absolute; top: 230px; right: 500px;">
+            <div class="form-group">
+                {{ form.amount(class="form-control form-control-lg") }}
+            </div>
+        </div>
+        <div class="form-group" style="position: absolute; top: 300px; right: 600px;">
+            {{ form.send(class="btn btn-outline-info") }}
+        </div>
+    </form>
+
+    <a href="{{ url_for('deletedataTax') }}" style="position: absolute; top: 350px; right: 610px;">Home</a>
+</body>
+{% endblock %}
